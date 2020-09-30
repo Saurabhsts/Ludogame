@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GAMES</title>
+	<link rel="stylesheet" type="text/css" href="ludo.css">
+</head>
+<div class="Container">
+	<h1>PLAY LUDO GAME</h1><br><br>	<br><br>
+	<div class="Dice">
+		<p>Player 1</p>
+		<img src="images/dice1.png" id="Dice1">
+
+		</div>
+		<div class="Dice">
+		<p>Player 2</p>
+		<img src="images/dice6.png" id="Dice2">
+		</div>
+		<div>
+		<button onclick="ludo()">click</button>
+	</div>
+		
+	</div>
+	<script>
+		ludo= () => 	{
+		
+		const Player1=Math.floor(Math.random()* 6)+ 1;
+		const Player1dice=`images/dice${Player1}.png`;
+		document.getElementById('Dice1').setAttribute('src',Player1dice);
+
+		const Player2=Math.floor(Math.random()* 6)+ 1;
+		const Player2dice=`images/dice${Player2}.png`;
+		document.getElementById('Dice2').setAttribute('src',Player2dice);
+
+		if (Player1>Player2) {
+			document.querySelector('h1').innerHTML="Player1 won";
+		}
+		else if (Player1<Player2) {
+			document.querySelector('h1').innerHTML="Player2 won";
+		}
+		else{
+			document.querySelector('h1').innerHTML="Draw";
+		}
+}
+	</script>
+<body>
+
+</body>
+</html>
